@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/eblouin876/Eat-Da-Burger#readme",
   "dependencies": {
+    "con-logger": "0.0.2",
     "dotenv": "^7.0.0",
     "express": "^4.16.4",
     "express-handlebars": "^3.0.2",
