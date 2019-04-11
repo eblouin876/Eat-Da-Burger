@@ -187,12 +187,16 @@ class Database {
    */
   connect() {
     return new Promise((resolve, reject) => {
-      this.connection = mysql.createConnection({
-        host: "localhost",
-        port: process.env.PORT || 3306,
-        user: process.env.DB_USER,
-        password: process.env.DB_PASS
-      });
+      if (process.env.JAWSDB_URL) {
+        this.connection = mysql.createConnection(process.env.JAWSDB_URL);
+      } else {
+        this.connection = mysql.createConnection({
+          host: "localhost",
+          port: process.env.PORT || 3306,
+          user: process.env.DB_USER,
+          password: process.env.DB_PASS
+        });
+      }
 
       this.connection.connect(async err => {
         if (err) reject(err);
