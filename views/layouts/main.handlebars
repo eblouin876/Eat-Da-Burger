@@ -12,6 +12,15 @@
 <body>
     {{{body}}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+    <script>
+        $(".change-devoured").on('click', function () {
+            let name = $(this).attr('data-id')
+            console.log(name)
+            $.ajax({ url: `/api/burgers/${name}`, type: 'PUT' })
+
+        })
+    </script>
 </body>
 
 </html>

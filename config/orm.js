@@ -111,7 +111,7 @@ class Database {
    * @description - Asynchronous function. Call with await db.update(table, update, key)
    */
   async update(table, update, key) {
-    await this.query(`UPDATE ?? SET ?? WHERE ?`, [
+    return await this.query(`UPDATE ?? SET ? WHERE ?`, [
       `${this.db}.${table}`,
       update,
       key
